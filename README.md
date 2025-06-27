@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Beyond Labs Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a website management dashboard built with [Create React App]and TypeScript.  
+It allows users to add, edit, and view website data, including country, language, categories, and more.  
+The UI uses Material-UI (MUI) components and supports dynamic form filling, validation, and data transfer between pages.
+
+---
+
+## Tech Stack
+
+- **React** (with Create React App)
+- **TypeScript**
+- **Material-UI (MUI)** for UI components
+- **Tailwind CSS** for utility-first styling
+- **Formik** for form validation
+- **Yup** for form validation schema
+- **Axios** for API requests
+
+## Features
+
+- Add and edit website details with a dynamic form
+- Select country and language with flag icons
+- Multi-select categories with checkboxes
+- Video preview support
+- Data table with clickable rows for editing
+- Form validation with Formik and Yup
+- Responsive design with Tailwind CSS and MUI
+
+---
+
+### FrontEnd Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Kondalu177/beyondlasTask.git
+
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+---
+
+### Backend Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Kondalu177/beyondlasTask.git
+   cd sever
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run command
+   ```bash
+   nodemon index.js
+   ```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
-Runs the app in the development mode.\
+Runs the app in development mode.  
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.  
 You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+src/
+  ├── Components/
+  │     ├── AddWebsite.tsx
+  │     ├── WebsiteTable.tsx
+  │     ├── Checkboxmail.tsx
+  │     ├── Validation/
+  │     │     └── FormValidation.tsx
+  │     └── Hooks/
+  │           └── useContries.tsx
+  ├── assets/
+  │     └── React.mp4
+  ├── App.tsx
+  └── index.tsx
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API & Data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Country and language data is fetched from (https://restcountries.com/v3.1/all?fields=cca2,name,flags,languages).
+- Website data is managed locally or via a backend API (see `axios` usage in components).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Customization
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- To add more fields or change validation, edit `FormValidation.tsx` and the relevant form components.
+- To change the video, replace `src/assets/React.mp4`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React documentation](https://reactjs.org/)
+- [Material-UI documentation](https://mui.com/)
+- [Formik documentation](https://formik.org/)
+- [Yup documentation](https://github.com/jquense/yup)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---

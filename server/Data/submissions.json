@@ -1,0 +1,47 @@
+[
+  {
+    "terms": true,
+    "websiteUrl": "https://beyondlabs.io/",
+    "country": "us",
+    "language": "us",
+    "mainCategories": [
+      "Education"
+    ],
+    "description1": " A dedicated and hardworking React Developer with 3 years of experience crafting dynamic and user-friendly web applications. Skilled in leveraging AWS and DevOps tools to streamline development and deployment processes. I'm committed to continuous learning and delivering impactful solutions that exceed expectations. A dedicated and hardworking React Developer with 3 years of experience crafting dynamic and user-friendly web applications. Skilled in leveraging AWS and DevOps tools to streamline development and deployment processes. I'm committed to continuous learning and delivering impactful solutions that exceed expectations.",
+    "normalOffer": {
+      "Guest_posting": 12,
+      "Link_insertion": 12
+    },
+    "greyNiche": {
+      "Enter_price": 12,
+      "GamblingGuest_posting1": "",
+      "GamblingLink_insertion1": "",
+      "CryptoGuest_posting1": "",
+      "CryptoLink_insertion1": "",
+      "AdultGuest_posting1": "",
+      "AdultLink_insertion1": "",
+      "GamblingGuest_posting2": "",
+      "GamblingLink_insertion2": "",
+      "CryptoGuest_posting2": "",
+      "CryptoLink_insertion2": "",
+      "AdultGuest_posting2": "",
+      "AdultLink_insertion2": ""
+    },
+    "homepageLink": {
+      "Guest_posting": 12,
+      "Description_Website": "12"
+    },
+    "isArticleIncluded": "Yes",
+    "taggingPolicy": "We do not tag paid articles.",
+    "articleWordCount": "Length of the article is not limited.",
+    "articleMinWords": "",
+    "articleMaxWords": "",
+    "advertiserLinkCount": "We do not tag paid articles.",
+    "advertiserMinLinks": "",
+    "advertiserMaxLinks": "",
+    "allowDoFollowLinks": "Yes",
+    "otherLinksInArticle": "We DO NOT allow links to other websites in the content of the article.",
+    "linkTypeAllowed": "Only brand links, URL, navigational, graphic links.",
+    "description3": " A dedicated and hardworking React Developer with 3 years of experience crafting dynamic and user-friendly web applications. Skilled in leveraging AWS and DevOps tools to streamline development and deployment processes. I'm committed to continuous learning and delivering impactful solutions that exceed expectations. A dedicated and hardworking React Developer with 3 years of experience crafting dynamic and user-friendly web applications. Skilled in leveraging AWS and DevOps tools to streamline development and deployment processes. I'm committed to continuous learning and delivering impactful solutions that exceed expectations."
+  }
+]

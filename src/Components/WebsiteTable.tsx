@@ -9,14 +9,14 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Box from "@mui/material/Box";
 import Pagenation from "./Pagenation.tsx";
-import useGetData from "./useGetData.tsx";
+import useGetData from "./Hooks/useGetData.tsx";
 import Vector from "../assets/Vector.svg";
 import Vector1 from "../assets/Vector1.svg";
 import Vector2 from "../assets/Vector2.svg";
 import Vector3 from "../assets/Vector3.svg";
 import Vector4 from "../assets/Vector4.svg";
 import Vector5 from "../assets/Vector5.svg";
-import useContries from "./useContries.tsx";
+import useContries from "./Hooks/useContries.tsx";
 import { useNavigate } from "react-router-dom";
 
 interface Column {

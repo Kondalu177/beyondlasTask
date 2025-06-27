@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "@mui/material";
 
-// List of checkbox options 
+// List of checkbox options
 const checkboxOptions: string[] = [
   "Animals / Pets",
   "Education",
@@ -79,7 +79,7 @@ function Checkboxmail({ name, formik }: CheckboxmailProps) {
         <Box>
           <FormGroup className="flex flex-row flex-wrap  w-full ">
             {checkboxOptions.map((optionValue) => (
-              <Box key={name} className="w-1/5 ">
+              <Box key={name} className="w-1/2 md:w-1/5">
                 <FormControlLabel
                   sx={{
                     "& .MuiFormControlLabel-label": {
@@ -105,15 +105,6 @@ function Checkboxmail({ name, formik }: CheckboxmailProps) {
               </Box>
             ))}
           </FormGroup>
-
-          {/* <Button
-              variant="contained"
-              color="primary"
-              onClick={handleSubmit}
-              sx={{ mt: 2 }}
-            >
-              Submit
-            </Button> */}
         </Box>
       </Box>
     </>

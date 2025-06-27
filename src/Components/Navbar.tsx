@@ -18,6 +18,7 @@ import ShoppingBag from "../assets/ShoppingBag.svg";
 import User from "../assets/User.svg";
 import Setting from "../assets/Settings.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Drawer, List, ListItem, ListItemText } from "@mui/material";
 
 // Define the pages for the navbar
 const pages = [
@@ -45,6 +46,12 @@ function Navbar() {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const [activePage, setActivePage] = useState("");
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Drawer menu
+  const toggleDrawer = (open: boolean) => () => {
+    setDrawerOpen(open);
+  };
   // Initialize activePage based on the current path
   useEffect(() => {
     const normalizedPath = location.pathname.replace(/\/$/, ""); // remove trailing slash
@@ -90,20 +97,23 @@ function Navbar() {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <img src={Logo} alt="Kraken Logo" />
+            <Box className="hidden md:flex items-center">
+              <img src={Logo} alt="Kraken Logo" className="h-8" />
+            </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
+                className="text-[#613fdd]"
                 size="large"
-                aria-label="account of current user"
+                aria-label="open navigation"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                onClick={handleOpenNavMenu}
+                onClick={toggleDrawer(true)}
                 color="inherit"
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
+              {/* <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
@@ -124,27 +134,41 @@ function Navbar() {
                     <Typography sx={{ textAlign: "center" }}>{page}</Typography>
                   </MenuItem>
                 ))}
-              </Menu>
+              </Menu> */}
+              <Drawer
+                anchor="left"
+                open={drawerOpen}
+                onClose={toggleDrawer(false)}
+                sx={{ display: { xs: "block", md: "none" } }}
+              >
+                <Box className="flex md:hidden items-center m-5">
+                  <img src={Logo} alt="Kraken Logo" className="h-8" />
+                </Box>
+                <Box
+                  sx={{ width: 250 }}
+                  role="presentation"
+                  onClick={toggleDrawer(false)}
+                  onKeyDown={toggleDrawer(false)}
+                >
+                  <List>
+                    {pages.map((page) => (
+                      <ListItem
+                        component="button"
+                        key={page}
+                        onClick={() => handlePageClick(page)}
+                        sx={{ textAlign: "left" }}
+                      >
+                        <ListItemText primary={page} />
+                      </ListItem>
+                    ))}
+                  </List>
+                </Box>
+              </Drawer>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
+
+            <Box className="flex md:hidden items-center">
+              <img src={Logo} alt="Kraken Logo" className="h-8" />
+            </Box>
 
             <Box
               sx={{
@@ -192,24 +216,27 @@ function Navbar() {
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton
-                  className="justify-evenly"
-                  onClick={handleOpenUserMenu}
-                  sx={{
-                    p: 0,
-                    display: "flex",
-                    gap: "10px",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img src={Wallet} alt="Wallet icon" />
-                  <img src={ShoppingBag} alt="ShoppingBag icon" />
-                  <img src={User} alt="User icon" />
-                  <img src={Setting} alt="Setting icon" />
-                </IconButton>
-              </Tooltip>
+            <Box sx={{ flexGrow: 0 }} className="flex items-center gap-4 mr-3">
+              <img
+                src={Wallet}
+                alt="Wallet icon"
+                className="w-5 h-5 sm:w-6 sm:h-6"
+              />
+              <img
+                src={ShoppingBag}
+                alt="ShoppingBag icon"
+                className="w-5 h-5 sm:w-6 sm:h-6"
+              />
+              <img
+                src={User}
+                alt="User icon"
+                className="w-5 h-5 sm:w-6 sm:h-6"
+              />
+              <img
+                src={Setting}
+                alt="Setting icon"
+                className="w-5 h-5 sm:w-6 sm:h-6"
+              />
             </Box>
           </Toolbar>
         </Container>

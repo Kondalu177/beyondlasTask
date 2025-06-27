@@ -29,15 +29,20 @@ function CreateOffer({ formik }: CreateOfferProps) {
   // Function to handle Form fields change
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
-    
   };
   return (
     <>
       <Box className="bg-[#FFFFFF]" sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Box
+            sx={{ borderBottom: 1, borderColor: "divider" }}
+            className="overflow-x-auto w-full"
+          >
             {/*  Tab list section start  */}
             <TabList
+              variant="scrollable"
+              scrollButtons="auto"
+              allowScrollButtonsMobile
               onChange={handleChange}
               aria-label="lab API tabs example"
               sx={{
@@ -754,7 +759,7 @@ function CreateOffer({ formik }: CreateOfferProps) {
                   Description of Website
                 </InputLabel>
                 <TextareaAutosize
-                  className={`border-2 outline-0 focus:placeholder-transparent rounded px-[5px] py-[3px] text-sm w-full
+                  className={`border-2 md:w-1/2 outline-0 focus:placeholder-transparent rounded px-[5px] py-[3px] text-sm w-full
                     ${
                       formik.touched.homepageLink?.Description_Website &&
                       formik.errors.homepageLink?.Description_Website
@@ -769,7 +774,6 @@ function CreateOffer({ formik }: CreateOfferProps) {
                   value={formik.values.homepageLink.Description_Website}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  style={{ width: "50%" }}
                 />
                 {formik.touched.homepageLink?.Description_Website &&
                   formik.errors.homepageLink?.Description_Website && (

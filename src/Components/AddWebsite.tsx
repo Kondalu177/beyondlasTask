@@ -115,8 +115,21 @@ function AddWebsite() {
         // Add similar merging for other nested objects if needed
       };
     }
+    // local storage for form data save
+    const savedData = localStorage.getItem("formData");
+    if (savedData) {
+      try {
+        return {
+          ...formikInitialDefaults,
+          ...JSON.parse(savedData),
+        };
+      } catch (error) {
+        console.error("Failed to parse localStorage data", error);
+      }
+    }
     return formikInitialDefaults;
   };
+
   // State for the form validation errors using formik
   const formik = useFormik({
     initialValues: getInitialValues(),
@@ -127,6 +140,7 @@ function AddWebsite() {
         .post("http://localhost:5000/add_website", values)
         .then(() => {
           console.log("Data saved");
+          localStorage.removeItem("formData");
           resetForm();
         })
         .catch((err) => {
@@ -135,6 +149,11 @@ function AddWebsite() {
       resetForm();
     },
   });
+
+  // Local storage for form data persistence
+  useEffect(() => {
+    localStorage.setItem("formData", JSON.stringify(formik.values));
+  }, [formik.values]);
 
   // Event handlers for form language inputs
   const handleChange = (e) => {
@@ -180,11 +199,11 @@ function AddWebsite() {
     <>
       <Box className="bg-[#FDFCFF]">
         {/* Add website content and video section start  */}
-        <h3 className="text-[24px] font-semibold p-5 ml-10 font-sans, line-sp">
+        <h3 className="text-[24px] font-semibold p-5   font-sans, line-sp">
           Add a Website
         </h3>
         <Box className="flex flex-col md:flex-row justify-between bg-[#FFFFFF]">
-          <Box className="flex flex-col w-full ml-10 md:w-1/2 p-5 justify-center">
+          <Box className="flex flex-col w-full md:ml-10 md:w-1/2 p-5 justify-center">
             <h3 className=" font-semibold text-[24px] font-medium">
               Learn how to get best out of <br />
               linksera
@@ -197,7 +216,7 @@ function AddWebsite() {
               <li>Tips to make your listing stand out to buyers</li>
             </ul>
           </Box>
-          <Box className="flex flex-col p-5 mr-10 w-full md:w-1/2 items-center justify-center relative">
+          <Box className="flex flex-col p-5 md:mr-10 w-full md:w-1/2 items-center justify-center relative">
             <video
               ref={videoRef}
               onClick={togglePlay}
@@ -240,13 +259,13 @@ function AddWebsite() {
                   Hey, Accept Preconditions before you start the listing!
                 </Typography>
                 {isAccepted ? (
-                  <Box className="flex items-center gap-2 ml-auto mr-4 bg-[#34C7591A] font-[500] text-black rounded-[10px] px-2 py-1">
+                  <Box className="flex items-center h-[30px] mt-8 md:mt-0  gap-2 ml-auto mr-4 bg-[#34C7591A] font-[500] text-black rounded-[10px] px-2 py-1">
                     <CheckIcon className="text-[#34C759] text-[18px] mt-1" />
                     <span>Accepted</span>
                   </Box>
                 ) : (
-                  <Box className="flex items-center gap-2 ml-auto mr-4 bg-[#FF95001A] font-[500] text-black rounded-[10px] px-2 py-1">
-                    <span className="h-2 w-2 bg-[#FF9500] rounded-full inline-block mt-1"></span>
+                  <Box className="flex items-center h-[30px] mt-8 md:mt-0 gap-2 ml-auto mr-4 bg-[#FF95001A] font-[500] text-black rounded-[10px] px-2 py-1">
+                    <span className="h-2 w-2 bg-[#FF9500] rounded-full inline-block"></span>
                     <span>Pending</span>
                   </Box>
                 )}
@@ -470,7 +489,7 @@ function AddWebsite() {
                   Description of Website
                 </InputLabel>
                 <TextareaAutosize
-                  className={`border-2 outline-0 focus:placeholder-transparent rounded px-[5px] py-[3px] text-sm w-full
+                  className={`border-2 md:w-1/2 outline-0 focus:placeholder-transparent rounded px-[5px] py-[3px] text-sm w-full
                   ${
                     formik.touched.description1 && formik.errors.description1
                       ? "border-red-500"
@@ -484,7 +503,6 @@ function AddWebsite() {
                   value={formik.values.description1}
                   onBlur={formik.handleBlur}
                   onChange={handleChange}
-                  style={{ width: "50%" }}
                 />
 
                 {(() => {
@@ -497,9 +515,9 @@ function AddWebsite() {
               <FormGroup>
                 <FormControlLabel
                   control={<Checkbox size="small" />}
+                  className="w-full md:w-[20%]"
                   label="I am the owner of the website"
                   sx={{
-                    width: "20%",
                     "& .MuiFormControlLabel-label": {
                       fontSize: "14px",
                     },

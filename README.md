@@ -21,5 +21,5 @@ Features
 - Table view of submitted entries with pagination
 - Default values on form load when editing
 
-  git clone https://github.com/your-username/your-repo.git
- cd your-repo
+
+

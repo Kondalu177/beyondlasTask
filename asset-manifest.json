@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/beyondlasTask/static/css/main.5aad16c6.css",
+    "main.js": "/beyondlasTask/static/js/main.605b9f8b.js",
+    "static/js/453.341d36e3.chunk.js": "/beyondlasTask/static/js/453.341d36e3.chunk.js",
+    "static/media/React.mp4": "/beyondlasTask/static/media/React.17cc0ffe80416f80f448.mp4",
+    "static/media/Logo.svg": "/beyondlasTask/static/media/Logo.bd5c255dfeb2edb907886b1016edf701.svg",
+    "static/media/Vector4.svg": "/beyondlasTask/static/media/Vector4.0af29c650d83eaed58b0477b4c4b01f7.svg",
+    "static/media/Vector1.svg": "/beyondlasTask/static/media/Vector1.f9f310dad0cfee0fd88a26d8dad175ea.svg",
+    "static/media/Vector2.svg": "/beyondlasTask/static/media/Vector2.41ae7a87085dcc588618fb582b0a7c96.svg",
+    "static/media/Vector.svg": "/beyondlasTask/static/media/Vector.57695fff73ca8475959f27db53997e0a.svg",
+    "static/media/Settings.svg": "/beyondlasTask/static/media/Settings.487ff4ca44c829f3610883534a0d434f.svg",
+    "static/media/Vector5.svg": "/beyondlasTask/static/media/Vector5.f8891eb296d034e47f129b6f15d9dd9d.svg",
+    "static/media/Vector3.svg": "/beyondlasTask/static/media/Vector3.4457f55d56f49120137ba60595610d2e.svg",
+    "static/media/ShoppingBag.svg": "/beyondlasTask/static/media/ShoppingBag.95be94844e8a394598699d3fb1dd2380.svg",
+    "index.html": "/beyondlasTask/index.html",
+    "static/media/Wallet.svg": "/beyondlasTask/static/media/Wallet.3215cdd5ef50767b92b2f9cf533c4117.svg",
+    "static/media/User.svg": "/beyondlasTask/static/media/User.07d0d32f15ddfae8a51edd5462b159af.svg",
+    "main.5aad16c6.css.map": "/beyondlasTask/static/css/main.5aad16c6.css.map",
+    "main.605b9f8b.js.map": "/beyondlasTask/static/js/main.605b9f8b.js.map",
+    "453.341d36e3.chunk.js.map": "/beyondlasTask/static/js/453.341d36e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5aad16c6.css",
+    "static/js/main.605b9f8b.js"
+  ]
+}

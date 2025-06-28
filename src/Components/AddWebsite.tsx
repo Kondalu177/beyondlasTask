@@ -29,7 +29,7 @@ import FormValidation from "./Validation/FormValidation.tsx";
 import useContries from "./Hooks/useContries.tsx";
 import ReactVideo from "../assets/React.mp4";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 function AddWebsite() {
   // State for the form inputs
@@ -42,6 +42,7 @@ function AddWebsite() {
   const [isPlaying, setIsPlaying] = useState(false);
   const location = useLocation();
   const rowData = location.state;
+  const navigate = useNavigate();
 
   // Formik form configuration and validation
   const formikInitialDefaults = {
@@ -142,6 +143,7 @@ function AddWebsite() {
           console.log("Data saved");
           localStorage.removeItem("formData");
           resetForm();
+          navigate("/websites");
         })
         .catch((err) => {
           console.error("Error saving data", err);

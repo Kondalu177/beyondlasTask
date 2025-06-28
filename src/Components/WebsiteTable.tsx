@@ -183,13 +183,13 @@ function WebsiteTable() {
                       key={index}
                       className="text-[#0F0C1B]  font-[12px] text-left"
                     >
-                      {View.mainCategories}
+                      {View.mainCategories[0]}
                     </TableCell>
                     <TableCell
                       key={index}
                       className="text-[#0F0C1B]  font-[12px] text-left"
                     >
-                      Entertainment
+                      {View.mainCategories?.slice(1).join(", ")}
                     </TableCell>
                     <TableCell className="text-[#0F0C1B]  font-[12px] text-left">
                       <Box className="flex flex-row gap-2">

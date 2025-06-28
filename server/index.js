@@ -46,10 +46,8 @@ app.post("/add_website", (req, res) => {
 
 // Website data retrieval endpoint
 app.get("/view_website", (req, res) => {
-  ensureFileExists(DATA_PATH);
-
   fs.readFile(DATA_PATH, "utf8", (err, data) => {
-    if (err) return res.status(500).send("Failed to save data: " + err.message);
+    if (err) return res.status(500).send("Failed to read data: " + err.message);
 
     try {
       const jsonData = JSON.parse(data);

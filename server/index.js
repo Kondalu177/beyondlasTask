@@ -1,6 +1,6 @@
 const express = require("express");
 const fs = require("fs"); // For reading and writing files
-const path = require("path");
+const path = require("./Data/submissions.json");
 const cors = require("cors"); // For enabling CORS
 
 const app = express();
@@ -46,6 +46,7 @@ app.post("/add_website", (req, res) => {
 // Website data retrieval endpoint
 app.get("/view_website", (req, res) => {
   ensureFileExists(DATA_PATH);
+
   fs.readFile(DATA_PATH, "utf8", (err, data) => {
     if (err) return res.status(500).send("Failed to read data");
 

@@ -127,6 +127,7 @@ function WebsiteTable() {
             </TableHead>
             <TableBody>
               {getData_view.map((View, index) => {
+                if (!View) return null;
                 const getCountryInfoByCode = (code: any) => {
                   const found = countries.find(
                     (c) => c.code === code?.toLowerCase()
@@ -144,7 +145,7 @@ function WebsiteTable() {
                     flag: found.flag,
                   };
                 };
-                const countryInfo = getCountryInfoByCode(View.country);
+                const countryInfo = getCountryInfoByCode(View.country) || "";
                 return (
                   <TableRow
                     hover
@@ -158,7 +159,7 @@ function WebsiteTable() {
                       key={index}
                       className="text-[#0F0C1B]  font-[12px] text-left"
                     >
-                      {View.websiteUrl}
+                      {View.websiteUrl || ""}
                     </TableCell>
                     <TableCell
                       key={index}
@@ -177,19 +178,19 @@ function WebsiteTable() {
                       key={index}
                       className="text-[#0F0C1B]  font-[12px] text-left"
                     >
-                      {countryInfo.language}
+                      {countryInfo.language || ""}
                     </TableCell>
                     <TableCell
                       key={index}
                       className="text-[#0F0C1B]  font-[12px] text-left"
                     >
-                      {View.mainCategories[0]}
+                      {View.mainCategories[0] || ""}
                     </TableCell>
                     <TableCell
                       key={index}
                       className="text-[#0F0C1B]  font-[12px] text-left"
                     >
-                      {View.mainCategories?.slice(1).join(", ")}
+                      {View.mainCategories?.slice(1).join(", ") || ""}
                     </TableCell>
                     <TableCell className="text-[#0F0C1B]  font-[12px] text-left">
                       <Box className="flex flex-row gap-2">

@@ -138,7 +138,7 @@ function AddWebsite() {
     onSubmit: (values, { resetForm }) => {
       console.log("Form Data:", values);
       axios
-        .post("http://localhost:5000/add_website", values)
+        .post("http://65.2.124.28:5000/add_website", values)
         .then(() => {
           console.log("Data saved");
           localStorage.removeItem("formData");

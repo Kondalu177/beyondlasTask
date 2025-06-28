@@ -52,7 +52,7 @@ function useGetData() {
   useEffect(() => {
     const FacilityData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/view_website");
+        const res = await axios.get("http://65.2.124.28:5000/view_website");
         setGetData_view(res.data);
       } catch (err) {
         console.error("Failed to get Facility data", err);

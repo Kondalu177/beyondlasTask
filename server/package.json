@@ -2,10 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build": "echo 'No build step required'"
-    
+    "vercel-build": "echo 'No build step required'",
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",

@@ -3,7 +3,6 @@ const fs = require("fs"); // For reading and writing files
 const cors = require("cors"); // For enabling CORS
 
 const app = express();
-const PORT = 5000;
 app.use(cors());
 app.use(express.json()); // Enable JSON parsing using middleware
 const DATA_PATH = "./data/submissions.json"; // Path to the JSON file
@@ -31,13 +30,11 @@ app.post("/add_website", (req, res) => {
 
 // Website data retrieval endpoint
 app.get("/view_website", (req, res) => {
- 
   fs.readFile(DATA_PATH, "utf8", (err, data) => {
-    
     if (err) return res.status(500).send("Failed to read data");
 
     res.json(JSON.parse(data));
   });
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;

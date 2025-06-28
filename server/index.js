@@ -1,6 +1,6 @@
 const express = require("express");
 const fs = require("fs"); // For reading and writing files
-const path = require("./Data/submissions.json");
+const path = require("path");
 const cors = require("cors"); // For enabling CORS
 
 const app = express();
@@ -36,7 +36,8 @@ app.post("/add_website", (req, res) => {
     existing.push(formData);
 
     fs.writeFile(DATA_PATH, JSON.stringify(existing, null, 2), (err) => {
-      if (err) return res.status(500).send("Failed to save data");
+      if (err)
+        return res.status(500).send("Failed to save data: " + err.message);
 
       res.send("Data saved successfully");
     });
@@ -48,7 +49,7 @@ app.get("/view_website", (req, res) => {
   ensureFileExists(DATA_PATH);
 
   fs.readFile(DATA_PATH, "utf8", (err, data) => {
-    if (err) return res.status(500).send("Failed to read data");
+    if (err) return res.status(500).send("Failed to save data: " + err.message);
 
     try {
       const jsonData = JSON.parse(data);

@@ -5,7 +5,8 @@ It allows users to add, edit, and view website data, including country, language
 The UI uses Material-UI (MUI) components and supports dynamic form filling, validation, and data transfer between pages.
 
 ---
-
+## NOTE
+"The frontend is deployed on GitHub and the backend is deployed on my AWS account. The issue is that the frontend only supports HTTPS, while the backend (hosted on AWS without a domain) only supports HTTP. As a result, the APIs cannot access data from the server due to mixed content restrictions. To see the fully functional dynamic application, you need to run the frontend locally."
 ## Tech Stack
 
 - **React** (with Create React App)
@@ -34,12 +35,15 @@ The UI uses Material-UI (MUI) components and supports dynamic form filling, vali
 
    ```bash
    git clone https://github.com/Kondalu177/beyondlasTask.git
-
    ```
 
 2. Install dependencies:
    ```bash
    npm install
+   ```
+2.Run command :
+   ```bash
+   npm run start
    ```
 
 ---
